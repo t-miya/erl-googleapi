@@ -18,7 +18,7 @@ bring_service_json(Url)->
                                                         Headers, Payload,
 								Options),
     lager:info("StatusCode = ~p", [StatusCode]),
-    {ok, Body, _Client2} = hackney:body(ClientRef),
+    {ok, Body} = hackney:body(ClientRef),
 
     case StatusCode of 
 	200 ->
